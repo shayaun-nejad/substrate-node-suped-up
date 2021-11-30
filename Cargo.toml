@@ -2,9 +2,6 @@
 resolver = "2"
 
 members = [
-	"bin/node-template/node",
-	"bin/node-template/pallets/template",
-	"bin/node-template/runtime",
 	"bin/node/bench",
 	"bin/node/cli",
 	"bin/node/test-runner-example",
@@ -62,7 +59,7 @@ members = [
 	"client/transaction-pool",
 	"client/transaction-pool/api",
 	"client/utils",
-	"frame/assets",
+	# "frame/assets",
 	"frame/atomic-swap",
 	"frame/aura",
 	"frame/authority-discovery",
