@@ -1,0 +1,157 @@
+[package]
+name = "node-cli"
+version = "3.0.0-dev"
+authors = ["Parity Technologies <admin@parity.io>"]
+description = "Generic Substrate node implementation in Rust."
+build = "build.rs"
+edition = "2021"
+license = "GPL-3.0-or-later WITH Classpath-exception-2.0"
+default-run = "substrate"
+homepage = "https://substrate.io"
+repository = "https://github.com/paritytech/substrate/"
+
+[package.metadata.wasm-pack.profile.release]
+# `wasm-opt` has some problems on linux, see
+# https://github.com/rustwasm/wasm-pack/issues/781 etc.
+wasm-opt = false
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[badges]
+travis-ci = { repository = "paritytech/substrate" }
+maintenance = { status = "actively-developed" }
+is-it-maintained-issue-resolution = { repository = "paritytech/substrate" }
+is-it-maintained-open-issues = { repository = "paritytech/substrate" }
+
+[[bin]]
+name = "substrate"
+path = "bin/main.rs"
+required-features = ["cli"]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# third-party dependencies
+codec = { package = "parity-scale-codec", version = "2.0.0" }
+serde = { version = "1.0.126", features = ["derive"] }
+futures = "0.3.16"
+hex-literal = "0.3.4"
+log = "0.4.8"
+rand = "0.7.2"
+structopt = { version = "0.3.25", optional = true }
+
+# primitives
+sp-authority-discovery = { version = "4.0.0-dev" }
+sp-consensus-babe = { version = "0.10.0-dev" }
+grandpa-primitives = { version = "4.0.0-dev", package = "sp-finality-grandpa" }
+sp-api = { version = "4.0.0-dev" }
+sp-core = { version = "4.0.0-dev" }
+sp-runtime = { version = "4.0.0-dev" }
+sp-timestamp = { version = "4.0.0-dev" }
+sp-authorship = { version = "4.0.0-dev"}
+sp-inherents = { version = "4.0.0-dev" }
+sp-keyring = { version = "4.0.0-dev" }
+sp-keystore = { version = "0.10.0-dev" }
+sp-consensus = { version = "0.10.0-dev" }
+sp-transaction-pool = { version = "4.0.0-dev" }
+sp-transaction-storage-proof = { version = "4.0.0-dev" }
+
+# client dependencies
+sc-client-api = { version = "4.0.0-dev"  }
+sc-chain-spec = { version = "4.0.0-dev"  }
+sc-consensus = { version = "0.10.0-dev"  }
+sc-transaction-pool = { version = "4.0.0-dev"  }
+sc-network = { version = "0.10.0-dev"  }
+sc-consensus-slots = { version = "0.10.0-dev"  }
+sc-consensus-babe = { version = "0.10.0-dev" }
+sc-consensus-uncles = { version = "0.10.0-dev" }
+grandpa = { version = "0.10.0-dev", package = "sc-finality-grandpa" }
+sc-rpc = { version = "4.0.0-dev"}
+sc-basic-authorship = { version = "0.10.0-dev"  }
+sc-service = { version = "0.10.0-dev", default-features = false  }
+sc-telemetry = { version = "4.0.0-dev" }
+sc-executor = { version = "0.10.0-dev" }
+sc-authority-discovery = { version = "0.10.0-dev" }
+sc-sync-state-rpc = { version = "0.9.0"  }
+
+# frame dependencies
+frame-system = { version = "4.0.0-dev" }
+frame-system-rpc-runtime-api = { version = "4.0.0-dev" }
+pallet-transaction-payment = { version = "4.0.0-dev" }
+pallet-im-online = { version = "4.0.0-dev", default-features = false }
+
+# node-specific dependencies
+node-runtime = { version = "3.0.0-dev", path = "../runtime" }
+node-rpc = { version = "3.0.0-dev", path = "../rpc" }
+node-primitives = { version = "2.0.0", path = "../primitives" }
+node-executor = { version = "3.0.0-dev", path = "../executor" }
+
+# CLI-specific dependencies
+sc-cli = { version = "0.10.0-dev", optional = true }
+frame-benchmarking-cli = { version = "4.0.0-dev", optional = true }
+node-inspect = { version = "0.9.0-dev", optional = true, path = "../inspect" }
+
+[target.'cfg(target_arch="x86_64")'.dependencies]
+node-executor = { version = "3.0.0-dev", path = "../executor", features = [
+	"wasmtime",
+] }
+sc-cli = { version = "0.10.0-dev", optional = true, features = [
+	"wasmtime",
+] }
+sc-service = { version = "0.10.0-dev", default-features = false, features = [
+	"wasmtime",
+] }
+sp-trie = { version = "4.0.0-dev", default-features = false, features = [
+	"memory-tracker",
+] }
+
+[dev-dependencies]
+sc-keystore = { version = "4.0.0-dev" }
+sc-client-db = { version = "0.10.0-dev"}
+sc-consensus = { version = "0.10.0-dev" }
+sc-consensus-babe = { version = "0.10.0-dev" }
+sc-consensus-epochs = { version = "0.10.0-dev" }
+sc-service-test = { version = "2.0.0" }
+sc-block-builder = { version = "0.10.0-dev" }
+sp-tracing = { version = "4.0.0-dev"  }
+sp-blockchain = { version = "4.0.0-dev"  }
+futures = "0.3.16"
+tempfile = "3.1.0"
+assert_cmd = "2.0.2"
+nix = "0.23"
+serde_json = "1.0"
+regex = "1"
+platforms = "1.1"
+async-std = { version = "1.10.0", features = ["attributes"] }
+soketto = "0.4.2"
+criterion = { version = "0.3.5", features = [ "async_tokio" ] }
+tokio = { version = "1.13", features = ["macros", "time"] }
+jsonrpsee-ws-client = "0.4.1"
+wait-timeout = "0.2"
+pallet-timestamp = { version = "4.0.0-dev" }
+
+[build-dependencies]
+structopt = { version = "0.3.25", optional = true }
+frame-benchmarking-cli = { version = "4.0.0-dev", optional = true }
+substrate-build-script-utils = { version = "3.0.0", optional = true }
+substrate-frame-cli = { version = "4.0.0-dev", optional = true }
+sc-cli = { version = "0.10.0-dev", optional = true }
+pallet-balances = { version = "4.0.0-dev" }
+
+[features]
+default = ["cli"]
+cli = [
+	"node-executor/wasmi-errno",
+	"node-inspect",
+	"sc-cli",
+	"frame-benchmarking-cli",
+	"substrate-frame-cli",
+	"sc-service/db",
+	"structopt",
+	"substrate-build-script-utils",
+]
+runtime-benchmarks = [
+	"frame-benchmarking-cli",
+]
