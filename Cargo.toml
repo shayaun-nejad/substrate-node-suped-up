@@ -74,7 +74,6 @@ panic = "unwind"
 
 [patch.crates-io]
 
-fork-tree = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 frame-benchmarking = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
@@ -94,7 +93,11 @@ frame-support-procedural-tools-derive = { git = "https://github.com/paritytech/s
 
 frame-system = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
+frame-system-benchmarking = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
 frame-system-rpc-runtime-api = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+frame-try-runtime = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-assets = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
@@ -103,6 +106,10 @@ pallet-aura = { git = "https://github.com/paritytech/substrate.git", branch = "m
 pallet-authority-discovery = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-authorship = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-bags-list = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-babe = { git = "https://github.com/paritytech/substrate.git", tag = "monthly-2021-10" }
 
 pallet-balances = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
@@ -126,6 +133,8 @@ pallet-elections-phragmen = { git = "https://github.com/paritytech/substrate.git
 
 pallet-election-provider-multi-phase = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
+pallet-gilt = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
 pallet-grandpa = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-identity = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
@@ -134,9 +143,19 @@ pallet-im-online = { git = "https://github.com/paritytech/substrate.git", branch
 
 pallet-indices = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
+pallet-lottery = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-membership = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-mmr = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-mmr-rpc = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
 pallet-multisig = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-offences = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-offences-benchmarking = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-proxy = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
@@ -144,9 +163,13 @@ pallet-randomness-collective-flip = { git = "https://github.com/paritytech/subst
 
 pallet-recovery = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
+pallet-society = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
 pallet-scheduler = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-session = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-session-benchmarking = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-staking = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
@@ -160,13 +183,19 @@ pallet-tips = { git = "https://github.com/paritytech/substrate.git", branch = "m
 
 pallet-transaction-payment = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
+pallet-asset-tx-payment = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
 pallet-transaction-payment-rpc = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-transaction-payment-rpc-runtime-api = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
+pallet-transaction-storage = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
 pallet-treasury = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-utility = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+pallet-uniques = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-vesting = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
@@ -191,6 +220,8 @@ sc-consensus = { git = "https://github.com/paritytech/substrate.git", branch = "
 sc-consensus-aura = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 sc-consensus-babe = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+sc-consensus-babe-rpc = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 sc-consensus-epochs = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
@@ -236,11 +267,15 @@ sc-service-test =  { git = "https://github.com/paritytech/substrate.git", branch
 
 sc-state-db = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
+sc-sync-state-rpc =  { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
 sc-telemetry = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 sc-tracing = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 sc-transaction-pool = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
+
+sc-transaction-pool-api = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 sp-api = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
@@ -336,3 +371,4 @@ substrate-frame-rpc-system = { git = "https://github.com/paritytech/substrate.gi
 
 substrate-prometheus-endpoint = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
+substrate-wasm-builder = { git = "https://github.com/paritytech/substrate.git", branch = "master" }

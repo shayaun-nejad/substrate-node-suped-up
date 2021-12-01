@@ -74,7 +74,7 @@ sc-service = { version = "0.10.0-dev", default-features = false  }
 sc-telemetry = { version = "4.0.0-dev" }
 sc-executor = { version = "0.10.0-dev" }
 sc-authority-discovery = { version = "0.10.0-dev" }
-sc-sync-state-rpc = { version = "0.9.0"  }
+sc-sync-state-rpc = { version = "0.10.0-dev"  }
 
 # frame dependencies
 frame-system = { version = "4.0.0-dev" }
@@ -87,11 +87,11 @@ node-runtime = { version = "3.0.0-dev", path = "../runtime" }
 node-rpc = { version = "3.0.0-dev", path = "../rpc" }
 node-primitives = { version = "2.0.0", path = "../primitives" }
 node-executor = { version = "3.0.0-dev", path = "../executor" }
+node-inspect = { version = "0.9.0-dev", path = "../inspect", optional = true }
 
 # CLI-specific dependencies
 sc-cli = { version = "0.10.0-dev", optional = true }
 frame-benchmarking-cli = { version = "4.0.0-dev", optional = true }
-node-inspect = { version = "0.9.0-dev", optional = true, path = "../inspect" }
 
 [target.'cfg(target_arch="x86_64")'.dependencies]
 node-executor = { version = "3.0.0-dev", path = "../executor", features = [

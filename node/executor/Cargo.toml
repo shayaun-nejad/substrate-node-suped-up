@@ -26,7 +26,7 @@ frame-benchmarking = { version = "4.0.0-dev" }
 [dev-dependencies]
 criterion = "0.3.0"
 frame-support = { version = "4.0.0-dev" }
-frame-system = { version = "3.0.0" }
+frame-system = { version = "4.0.0-dev" }
 pallet-balances = { version = "4.0.0-dev" }
 pallet-contracts = { version = "4.0.0-dev" }
 pallet-im-online = { version = "4.0.0-dev" }

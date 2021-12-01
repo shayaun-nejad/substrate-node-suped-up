@@ -82,7 +82,6 @@ TO_RENAME=(
     "sr-staking-primitives sp-staking"
     "sr-std sp-std"
     "sr-version sp-version"
-    "substrate-state-machine sp-state-machine"
     "substrate-transaction-pool-runtime-api sp-transaction-pool"
     "substrate-trie sp-trie"
     "substrate-wasm-interface sp-wasm-interface"
