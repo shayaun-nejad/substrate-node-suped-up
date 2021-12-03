@@ -7,6 +7,7 @@ members = [
 	"node/primitives",
 	"node/rpc",
 	"node/runtime",
+	"node/inspect"
 ]
 
 # The list of dependencies below (which can be both direct and indirect dependencies) are crates
@@ -67,14 +68,13 @@ wasmi = { opt-level = 3 }
 x25519-dalek = { opt-level = 3 }
 yamux = { opt-level = 3 }
 zeroize = { opt-level = 3 }
+
 [profile.release]
 # Substrate runtime requires unwinding.
 panic = "unwind"
 
 
 [patch.crates-io]
-
-
 frame-benchmarking = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 frame-benchmarking-cli = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
@@ -109,7 +109,7 @@ pallet-authorship = { git = "https://github.com/paritytech/substrate.git", branc
 
 pallet-bags-list = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
-pallet-babe = { git = "https://github.com/paritytech/substrate.git", tag = "monthly-2021-10" }
+pallet-babe = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
 pallet-balances = { git = "https://github.com/paritytech/substrate.git", branch = "master" }
 
